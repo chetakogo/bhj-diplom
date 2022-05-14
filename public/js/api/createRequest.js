@@ -5,7 +5,8 @@
 // const mail = document.get('email');
 // const password = document.getElementsByName('password')
 
-function createRequest (options = {callback, data, method, url}) {
+const createRequest =  (options = {}) => {
+   
     const xhr = new XMLHttpRequest();
 
     const formData = new FormData();
@@ -14,14 +15,31 @@ function createRequest (options = {callback, data, method, url}) {
 
     xhr.addEventListener('load', () => {
         if ((xhr.readyState === 4) && (xhr.status === 200 )){
-            options.callback(null, xhr.response)
+           options.callback(null, xhr.response)
         } else {
             options.callback(xhr.error)
         }
     });
 
     if (options.method === 'GET') {
-        xhr.open(options.method, `${options.url}?mail=${options.data.mail}&${data.mail}password=${options.data.password}`)
+        let url = options.url;
+        if (options.data) {
+            url += '?';
+            let data = options.data;
+            for (let key in data) {
+                url += key + '=' + data[key] + '&';
+            }
+            url = url.slice(0,-1);
+        }
+
+        try {
+            if(url) {
+                xhr.open(options.method, url, true);
+                xhr.send();
+            }
+        } catch (e) {
+            options.callback(e);
+        }
     } else {
         for (let key in options.data) {
             formData.append(key, options.data[key]);
@@ -37,6 +55,5 @@ function createRequest (options = {callback, data, method, url}) {
     } catch (error) {
         callback(error);
     }
-   
 }
 

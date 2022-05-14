@@ -42,7 +42,6 @@ for (let item of buttons) {
    * Закрывает текущее окно (Modal.close())
    * */
   onClose(e) {
-e.preventDefault();
 this.close();
   }
   /**

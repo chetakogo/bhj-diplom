@@ -33,18 +33,15 @@ class TransactionsPage {
    * TransactionsPage.removeAccount соответственно
    * */
   registerEvents() {
-    const remAcc = document.querySelector('.remove-account');
-    const remTrans = document.querySelector('.transaction__remove');
-
-    remAcc.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.removeAccount();
-    })
-
-    remTrans.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.removeTransaction(remTrans.dataset.id)
-    })
+    this.element.addEventListener('click', (event) => {
+      if (event.target.closest('.remove-account')) {
+          this.removeAccount();
+      } else if (event.target.closest('.transaction__remove')) {
+          this.removeTransaction(
+              event.target.closest('.transaction__remove').dataset.id
+          );
+      }
+  });
   }
 
   /**
@@ -184,12 +181,12 @@ class TransactionsPage {
    * используя getTransactionHTML
    * */
   renderTransactions(data){
-    const content = this.element.querySelector('.content');
+    const content = document.querySelector('.content');
 
         content.innerHTML = '';
 
-       data.forEach((item) => {
+       for (let item of data) {
         content.innerHTML += this.getTransactionHTML(item);
-       })
+       }
   }
 }
