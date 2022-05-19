@@ -186,15 +186,6 @@
       "created_at": "2022-05-14T21:20:24.043Z"
     },
     {
-      "id": "boq2qna30l36dhc13",
-      "type": "expense",
-      "name": "trr",
-      "sum": 111,
-      "account_id": "boq2qnbvcl36ddqvg",
-      "user_id": "boq2qn2iol36dd8y0",
-      "created_at": "2022-05-14T21:20:33.831Z"
-    },
-    {
       "id": "boq2qnc3ol36dq6cl",
       "type": "income",
       "name": "invest",
@@ -202,6 +193,15 @@
       "account_id": "boq2qn4i0l36dj3m1",
       "user_id": "boq2qn2iol36dd8y0",
       "created_at": "2022-05-14T21:27:26.372Z"
+    },
+    {
+      "id": "boq2qn39wl3dikfr3",
+      "type": "expense",
+      "name": "bjkb",
+      "sum": 100,
+      "account_id": "boq2qn4i0l36dj3m1",
+      "user_id": "boq2qn2iol36dd8y0",
+      "created_at": "2022-05-19T21:17:19.934Z"
     }
   ]
 }

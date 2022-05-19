@@ -33,10 +33,9 @@ const createRequest =  (options = {}) => {
         }
 
         try {
-            if(url) {
                 xhr.open(options.method, url, true);
                 xhr.send();
-            }
+            
         } catch (e) {
             options.callback(e);
         }
@@ -44,16 +43,11 @@ const createRequest =  (options = {}) => {
         for (let key in options.data) {
             formData.append(key, options.data[key]);
         }
-    }
-    try {
         xhr.open(options.method, options.url);
-        if (options.method === 'GET') {
-            xhr.send();
-        } else {
-            xhr.send(formData);
-        }
-    } catch (error) {
-        callback(error);
+        xhr.send(formData);
     }
+
 }
+
+
 
