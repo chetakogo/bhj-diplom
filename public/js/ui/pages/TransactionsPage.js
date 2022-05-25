@@ -10,7 +10,7 @@ class TransactionsPage {
    * Сохраняет переданный элемент и регистрирует события
    * через registerEvents()
    * */
-  constructor( element ) {
+   constructor( element ) {
     if (!element) {
       throw new Error('passed an empty element')
     } else {
@@ -54,16 +54,17 @@ class TransactionsPage {
    * для обновления приложения
    * */
   removeAccount() {
-    if (!this.lastOptions) {
-      return;
-    }
-    if (confirm('Вы действительно хотите удалить счёт?')) {
-      Account.remove(this.lastOptions.account_id, {}, (err, response) => {
-        if (response && response.success) {
-          App.update();
+    if (confirm('Вы действительно хотите удалить счет?')) {
+      let id = document.querySelector('.account.active').getAttribute('data-id');
+      Account.remove({
+        'id': id
+      }, (err, response) => {
+        if (response.success) {
+          this.clear();
+          App.updateWidgets();
+          App.updateForms();
         }
       });
-      this.clear();
     }
   }
 

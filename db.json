@@ -33,11 +33,6 @@
       "name": "Сбер",
       "user_id": "boq2qn2iol36dd8y0",
       "id": "boq2qnbvcl36ddqvg"
-    },
-    {
-      "name": "tinkoff",
-      "user_id": "boq2qn2iol36dd8y0",
-      "id": "boq2qn4i0l36dj3m1"
     }
   ],
   "transactions": [
@@ -175,33 +170,6 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
-    },
-    {
-      "id": "boq2qnfsl36dh4h8",
-      "type": "income",
-      "name": "frf",
-      "sum": 444,
-      "account_id": "boq2qnbvcl36ddqvg",
-      "user_id": "boq2qn2iol36dd8y0",
-      "created_at": "2022-05-14T21:20:24.043Z"
-    },
-    {
-      "id": "boq2qnc3ol36dq6cl",
-      "type": "income",
-      "name": "invest",
-      "sum": 500,
-      "account_id": "boq2qn4i0l36dj3m1",
-      "user_id": "boq2qn2iol36dd8y0",
-      "created_at": "2022-05-14T21:27:26.372Z"
-    },
-    {
-      "id": "boq2qn39wl3dikfr3",
-      "type": "expense",
-      "name": "bjkb",
-      "sum": 100,
-      "account_id": "boq2qn4i0l36dj3m1",
-      "user_id": "boq2qn2iol36dd8y0",
-      "created_at": "2022-05-19T21:17:19.934Z"
     }
   ]
 }
